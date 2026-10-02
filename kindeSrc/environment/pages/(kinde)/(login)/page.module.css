@@ -1,4 +1,4 @@
-:root {
+.viewport {
   --ico-primary: #0085ca;
   --ico-deep: #002e5d;
   --ico-mid: #2774ae;
@@ -6,9 +6,6 @@
   --ico-surface: #ffffff;
   --ico-neutral-600: #7c878e;
   --ico-neutral-300: #c1c6c8;
-}
-
-.viewport {
   min-height: 100vh;
   display: grid;
   place-items: center;
