@@ -1,0 +1,9 @@
+{
+  "name": "kinde-icontec-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Custom Kinde login UI for ICONTEC",
+  "scripts": {
+    "check": "echo \"No local build configured. Sync from Kinde dashboard.\""
+  }
+}
