@@ -8,6 +8,20 @@ const kindeVariables = {
   buttonBorderRadius: "10px",
 } as const;
 
+const brandPalette = {
+  processBlue: "#0085CA",
+  white: "#FFFFFF",
+  blue648: "#002E5D",
+  blue2383: "#2774AE",
+  blue2925: "#009CDE",
+  blue2915: "#62B5E5",
+  blue2905: "#8DC8E8",
+  gray430: "#7C878E",
+  gray428: "#C1C6C8",
+  black: "#000104",
+  blue287: "#003087",
+} as const;
+
 export const getStyles = (): string => `
   :root {
     --kinde-base-font-family: ${kindeVariables.baseFontFamily};
@@ -19,14 +33,25 @@ export const getStyles = (): string => `
     --kinde-button-border-radius: ${kindeVariables.buttonBorderRadius};
     --kinde-control-border-radius: 10px;
     --kinde-form-spacing-content: 1.25rem;
+    --ico-process-blue: ${brandPalette.processBlue};
+    --ico-white: ${brandPalette.white};
+    --ico-648: ${brandPalette.blue648};
+    --ico-2383: ${brandPalette.blue2383};
+    --ico-2925: ${brandPalette.blue2925};
+    --ico-2915: ${brandPalette.blue2915};
+    --ico-2905: ${brandPalette.blue2905};
+    --ico-430: ${brandPalette.gray430};
+    --ico-428: ${brandPalette.gray428};
+    --ico-black: ${brandPalette.black};
+    --ico-287: ${brandPalette.blue287};
   }
 
   body {
     margin: 0;
     color: #002E5D;
     background:
-      radial-gradient(1200px 500px at 85% -10%, rgba(98, 181, 229, 0.22), transparent 62%),
-      radial-gradient(900px 350px at -5% 100%, rgba(0, 133, 202, 0.16), transparent 60%),
+      radial-gradient(1200px 500px at 85% -10%, rgba(98, 181, 229, 0.26), transparent 62%),
+      radial-gradient(900px 350px at -5% 100%, rgba(0, 156, 222, 0.20), transparent 60%),
       linear-gradient(160deg, #f4f9fc 0%, #edf6fc 36%, #ffffff 100%);
     min-height: 100vh;
   }
@@ -47,26 +72,38 @@ export const getStyles = (): string => `
   .ico-brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
     text-decoration: none;
-    color: #002E5D;
+    color: var(--ico-648);
     font-weight: 700;
     letter-spacing: 0.02em;
+  }
+
+  .ico-brand-logo {
+    display: block;
+    width: 50px;
+    height: auto;
+    opacity: 0.78;
+    filter: saturate(0.9);
   }
 
   .ico-brand-dot {
     width: 10px;
     height: 10px;
     border-radius: 999px;
-    background: #0085CA;
-    box-shadow: 0 0 0 6px rgba(0, 133, 202, 0.12);
+    background: var(--ico-process-blue);
+    box-shadow: 0 0 0 6px rgba(0, 133, 202, 0.16);
   }
 
   .ico-switch-link {
-    color: #2774AE;
+    color: var(--ico-2383);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  .ico-switch-link:hover,
+  .ico-switch-link:focus-visible {
+    color: var(--ico-287);
   }
 
   .ico-main {
@@ -87,33 +124,34 @@ export const getStyles = (): string => `
   }
 
   .ico-sidepanel {
+    position: relative;
+    overflow: hidden;
     border-radius: 18px;
-    border: 1px solid rgba(0, 46, 93, 0.12);
-    background: linear-gradient(165deg, rgba(0, 133, 202, 0.08), rgba(255, 255, 255, 0.72));
+    border: 1px solid rgba(0, 46, 93, 0.14);
+    background: linear-gradient(165deg, rgba(0, 133, 202, 0.12), rgba(141, 200, 232, 0.20));
     box-shadow: 0 16px 42px rgba(0, 46, 93, 0.1);
-    padding: 2rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     animation: icoFadeIn 450ms ease-out both;
   }
 
-  .ico-sidepanel h2 {
-    margin: 0;
-    font-size: clamp(1.45rem, 2.4vw, 2rem);
-    line-height: 1.15;
-  }
-
-  .ico-sidepanel p {
-    margin: 0.75rem 0 0;
-    color: #3e6386;
-    line-height: 1.5;
+  .ico-sidepanel-logo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    display: block;
   }
 
   .ico-form-card {
     border-radius: 18px;
-    border: 1px solid rgba(0, 46, 93, 0.12);
-    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(193, 198, 200, 0.68);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(4px);
     box-shadow: 0 18px 48px rgba(0, 46, 93, 0.14);
     padding: 1.4rem;
@@ -128,15 +166,15 @@ export const getStyles = (): string => `
   [data-kinde-form] [data-kinde-control-password],
   [data-kinde-form] [data-kinde-control-email] {
     border-radius: 10px;
-    border: 1px solid rgba(124, 135, 142, 0.42);
+    border: 1px solid rgba(124, 135, 142, 0.56);
   }
 
   [data-kinde-form] [data-kinde-control-text]:focus-visible,
   [data-kinde-form] [data-kinde-control-password]:focus-visible,
   [data-kinde-form] [data-kinde-control-email]:focus-visible {
     outline: none;
-    border-color: #0085CA;
-    box-shadow: 0 0 0 4px rgba(0, 133, 202, 0.18);
+    border-color: var(--ico-2925);
+    box-shadow: 0 0 0 4px rgba(0, 156, 222, 0.20);
   }
 
   [data-kinde-control-submit] {
@@ -146,13 +184,13 @@ export const getStyles = (): string => `
   [data-kinde-control-submit]:hover,
   [data-kinde-control-submit]:focus-visible {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(0, 133, 202, 0.28);
+    box-shadow: 0 8px 20px rgba(0, 48, 135, 0.30);
     filter: saturate(1.08);
   }
 
   .ico-footer {
     text-align: center;
-    color: #7C878E;
+    color: var(--ico-430);
     font-size: 0.8rem;
     padding: 0.75rem 1rem 1.25rem;
   }
@@ -178,6 +216,10 @@ export const getStyles = (): string => `
   }
 
   @media (max-width: 900px) {
+    .ico-brand-logo {
+      width: 92px;
+    }
+
     .ico-widget-wrap {
       grid-template-columns: 1fr;
     }

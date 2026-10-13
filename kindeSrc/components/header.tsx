@@ -9,8 +9,7 @@ export const Header = (props: { page: "login" | "register" }) => {
   return (
     <header className="ico-header">
       <a className="ico-brand" href="#" aria-label="ICONTEC">
-        <span className="ico-brand-dot" aria-hidden="true" />
-        <span>ICONTEC</span>
+        <img className="ico-brand-logo" src="assets/logoPNG.png" alt="Logo ICONTEC" />
       </a>
       {isLogin ? (
         <a href={getKindeRegisterUrl()} className="ico-switch-link">

@@ -11,11 +11,12 @@ export const Widget: React.FC<WidgetProps> = ({ heading }) => {
   return (
     <section className="ico-widget-wrap" aria-label="Autenticacion ICONTEC">
       <aside className="ico-sidepanel">
-        <h2>Ingreso corporativo</h2>
-        <p>
-          Accede a tus servicios y gestiona tus operaciones con una experiencia
-          de autenticacion clara, segura y consistente.
-        </p>
+        <img
+          className="ico-sidepanel-logo"
+          src="assets/logoAnimated.gif"
+          alt=""
+          aria-hidden="true"
+        />
       </aside>
 
       <main className="ico-form-card">
