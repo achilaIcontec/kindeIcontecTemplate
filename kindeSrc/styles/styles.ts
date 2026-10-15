@@ -49,20 +49,38 @@ export const getStyles = (): string => `
   body {
     margin: 0;
     color: #002E5D;
-    background:
-      radial-gradient(1200px 500px at 85% -10%, rgba(98, 181, 229, 0.26), transparent 62%),
-      radial-gradient(900px 350px at -5% 100%, rgba(0, 156, 222, 0.20), transparent 60%),
-      linear-gradient(160deg, #f4f9fc 0%, #edf6fc 36%, #ffffff 100%);
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("https://raw.githubusercontent.com/achilaIcontec/kindeIcontecTemplate/refs/heads/main/kindeSrc/assets/logoAnimated.gif") center center / cover no-repeat;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(1000px 520px at 50% 16%, rgba(0, 48, 135, 0.24), transparent 75%),
+      linear-gradient(180deg, rgba(0, 32, 74, 0.36) 0%, rgba(0, 46, 93, 0.20) 100%);
+    z-index: -1;
   }
 
   .ico-shell {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    position: relative;
   }
 
   .ico-header {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,8 +100,8 @@ export const getStyles = (): string => `
     display: block;
     width: 50px;
     height: auto;
-    opacity: 0.78;
-    filter: saturate(0.9);
+    opacity: 0.92;
+    filter: saturate(1.05);
   }
 
   .ico-brand-dot {
@@ -95,46 +113,54 @@ export const getStyles = (): string => `
   }
 
   .ico-switch-link {
-    color: var(--ico-2383);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 92, 180, 0.75);
+    background: linear-gradient(135deg, #0071CE, #0096DF);
+    color: #FFFFFF;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 8px 20px rgba(0, 48, 135, 0.30);
+    transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
   }
 
   .ico-switch-link:hover,
   .ico-switch-link:focus-visible {
-    color: var(--ico-287);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 48, 135, 0.35);
+    filter: brightness(1.06);
+  }
+
+  .ico-switch-link:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
   }
 
   .ico-main {
-    flex: 1;
     display: flex;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 5rem 1rem 1.2rem;
   }
 
   .ico-widget-wrap {
     width: 100%;
-    max-width: 980px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 1rem;
+    max-width: 460px;
+    display: flex;
     align-items: stretch;
+    justify-content: center;
   }
 
   .ico-sidepanel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 18px;
-    border: 1px solid rgba(0, 46, 93, 0.14);
-    background: linear-gradient(165deg, rgba(0, 133, 202, 0.12), rgba(141, 200, 232, 0.20));
-    box-shadow: 0 16px 42px rgba(0, 46, 93, 0.1);
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: icoFadeIn 450ms ease-out both;
+    display: none;
   }
 
   .ico-sidepanel-logo {
@@ -149,12 +175,13 @@ export const getStyles = (): string => `
   }
 
   .ico-form-card {
+    width: 100%;
     border-radius: 18px;
-    border: 1px solid rgba(193, 198, 200, 0.68);
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(4px);
+    border: 1px solid rgba(193, 198, 200, 0.45);
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(6px);
     box-shadow: 0 18px 48px rgba(0, 46, 93, 0.14);
-    padding: 1.4rem;
+    padding: 1.5rem;
     animation: icoLiftIn 420ms ease-out both;
   }
 
@@ -189,10 +216,7 @@ export const getStyles = (): string => `
   }
 
   .ico-footer {
-    text-align: center;
-    color: var(--ico-430);
-    font-size: 0.8rem;
-    padding: 0.75rem 1rem 1.25rem;
+    display: none;
   }
 
   @keyframes icoLiftIn {
@@ -221,11 +245,7 @@ export const getStyles = (): string => `
     }
 
     .ico-widget-wrap {
-      grid-template-columns: 1fr;
-    }
-
-    .ico-sidepanel {
-      padding: 1.4rem;
+      max-width: 100%;
     }
   }
 
