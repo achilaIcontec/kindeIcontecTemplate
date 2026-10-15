@@ -13,7 +13,7 @@ export const Widget: React.FC<WidgetProps> = ({ heading }) => {
       <aside className="ico-sidepanel">
         <img
           className="ico-sidepanel-logo"
-          src="https://raw.githubusercontent.com/achilaIcontec/kindeIcontecTemplate/main/kindeSrc/assets/logoAnimated.gif"
+          src="/assets/logoAnimated.gif"
           alt=""
           aria-hidden="true"
         />

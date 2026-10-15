@@ -58,7 +58,7 @@ export const getStyles = (): string => `
     content: "";
     position: fixed;
     inset: 0;
-    background: url("https://raw.githubusercontent.com/achilaIcontec/kindeIcontecTemplate/main/kindeSrc/assets/logoAnimated.gif") center center / cover no-repeat;
+    background: url("/assets/logoAnimated.gif") center center / cover no-repeat;
     z-index: -2;
   }
 
