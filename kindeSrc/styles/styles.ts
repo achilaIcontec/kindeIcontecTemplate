@@ -51,9 +51,10 @@ export const getStyles = (): string => `
     color: #002E5D;
     min-height: 100vh;
     position: relative;
+    isolation: isolate;
     overflow-x: hidden;
     background: url("https://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoAnimated.gif") center center / cover no-repeat !important;
-    z-index: -2;
+    z-index: 0;
   }
 
   body::before {
@@ -61,6 +62,7 @@ export const getStyles = (): string => `
     position: fixed;
     inset: 0;
     background: url("https://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoAnimated.gif") center center / cover no-repeat;
+    pointer-events: none;
     z-index: -2;
   }
 
@@ -71,7 +73,14 @@ export const getStyles = (): string => `
     background:
       radial-gradient(1000px 520px at 50% 16%, rgba(0, 48, 135, 0.24), transparent 75%),
       linear-gradient(180deg, rgba(0, 32, 74, 0.36) 0%, rgba(0, 46, 93, 0.20) 100%);
+    pointer-events: none;
     z-index: -1;
+  }
+
+  [data-kinde-root="true"] {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
   }
 
   .ico-shell {
