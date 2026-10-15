@@ -52,6 +52,8 @@ export const getStyles = (): string => `
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    background: url("https://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoAnimated.gif") center center / cover no-repeat !important;
+    z-index: -2;
   }
 
   body::before {
