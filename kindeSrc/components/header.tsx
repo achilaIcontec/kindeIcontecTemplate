@@ -11,7 +11,7 @@ export const Header = (props: { page: "login" | "register" }) => {
       <a className="ico-brand" href="#" aria-label="ICONTEC">
         <img
           className="ico-brand-logo"
-          src="https://raw.githubusercontent.com/achilaIcontec/kindeIcontecTemplate/refs/heads/main/kindeSrc/assets/logoPNG.png"
+          src="https://raw.githubusercontent.com/achilaIcontec/kindeIcontecTemplate/main/kindeSrc/assets/logoPNG.png"
           alt="Logo ICONTEC"
         />
       </a>
