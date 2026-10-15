@@ -58,7 +58,7 @@ export const getStyles = (): string => `
     content: "";
     position: fixed;
     inset: 0;
-    background: url("/assets/logoAnimated.gif") center center / cover no-repeat;
+    background: url("http://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoAnimated.gif") center center / cover no-repeat;
     z-index: -2;
   }
 
