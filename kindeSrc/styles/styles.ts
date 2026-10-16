@@ -115,7 +115,7 @@ export const getStyles = (): string => `
 
   .ico-brand-logo {
     display: block;
-    width: 50px;
+    width: 150px;
     height: auto;
     opacity: 0.92;
     filter: saturate(1.05);
@@ -258,7 +258,7 @@ export const getStyles = (): string => `
 
   @media (max-width: 900px) {
     .ico-brand-logo {
-      width: 92px;
+      width: 150px;
     }
 
     .ico-widget-wrap {
