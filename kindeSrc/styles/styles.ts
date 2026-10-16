@@ -53,25 +53,31 @@ export const getStyles = (): string => `
     position: relative;
     isolation: isolate;
     overflow-x: hidden;
-    background: url("http://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoanimadoicontecwhite.gif") center center / cover no-repeat !important;
     z-index: 0;
+
   }
 
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("http://portalafiliados.icontec.org/wp-content/uploads/2026/10/logoanimadoicontecwhite.gif") center center / cover no-repeat;
     pointer-events: none;
     z-index: -2;
+    background:
+      radial-gradient(circle at center, rgba(0, 0, 0, 0.22) 0%, rgba(0, 133, 202, 0.30) 18%, rgba(0, 156, 222, 0.26) 32%, rgba(141, 200, 232, 0.18) 48%, transparent 68%),
+      radial-gradient(circle at 20% 25%, rgba(0, 133, 202, 0.25), transparent 18%),
+      radial-gradient(circle at 80% 20%, rgba(0, 156, 222, 0.24), transparent 18%),
+      radial-gradient(circle at 30% 75%, rgba(141, 200, 232, 0.22), transparent 20%),
+      radial-gradient(circle at 70% 72%, rgba(0, 133, 202, 0.20), transparent 18%);
   }
 
   body::after {
     content: "";
     position: fixed;
-    inset: 0;
+    inset: -8% -5%;
     background:
-      radial-gradient(1000px 520px at 50% 16%, rgba(0, 48, 135, 0.24), transparent 75%),
+      radial-gradient(circle at center, rgba(0, 156, 222, 0.18), transparent 30%),
+      radial-gradient(circle at center, rgba(141, 200, 232, 0.12), transparent 48%),
       linear-gradient(180deg, rgba(0, 32, 74, 0.36) 0%, rgba(0, 46, 93, 0.20) 100%);
     pointer-events: none;
     z-index: -1;
