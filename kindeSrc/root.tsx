@@ -38,7 +38,7 @@ export const Root = ({
         />
         {getKindeRequiredCSS()}
         {getKindeRequiredJS()}
-        <style>{getStyles()}</style>
+        <style dangerouslySetInnerHTML={{ __html: getStyles() }} />
       </head>
       <body>
         <div data-kinde-root="true">{children}</div>
