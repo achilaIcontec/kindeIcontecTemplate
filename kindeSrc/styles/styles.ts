@@ -22,6 +22,16 @@ const brandPalette = {
   blue287: "#003087",
 } as const;
 
+// Simplified ICONTEC isotype: concentric broken rings.
+const icontecIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
+  <circle cx="50" cy="50" r="43" stroke-dasharray="205 14 40 11" transform="rotate(-150 50 50)"/>
+  <circle cx="50" cy="50" r="30" stroke-dasharray="150 38" transform="rotate(-35 50 50)"/>
+  <path d="M70 28 L84 20"/>
+  <circle cx="50" cy="50" r="16" stroke-dasharray="82 18.5" transform="rotate(-20 50 50)"/>
+</svg>`;
+
+const icontecPatternUrl = `url("data:image/svg+xml,${encodeURIComponent(icontecIconSvg)}")`;
+
 export const getStyles = (): string => `
   :root {
     --kinde-base-font-family: ${kindeVariables.baseFontFamily};
@@ -107,11 +117,11 @@ export const getStyles = (): string => `
     z-index: 0 !important;
     pointer-events: none !important;
     display: block !important;
-    background-image: url("https://portalafiliados.icontec.org/wp-content/uploads/2026/10/PATRON-ICONTEC-CMYK_2023_WH.png") !important;
-    background-repeat: repeat !important;
-    background-position: center !important;
-    background-size: 520px auto !important;
-    opacity: 0.18 !important;
+    background-image: ${icontecPatternUrl}, ${icontecPatternUrl} !important;
+    background-repeat: repeat, repeat !important;
+    background-position: 0 0, 80px 80px !important;
+    background-size: 160px 160px, 160px 160px !important;
+    opacity: 0.14 !important;
   }
 
   .ico-main {
