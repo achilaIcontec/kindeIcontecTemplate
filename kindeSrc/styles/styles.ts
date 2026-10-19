@@ -1,5 +1,5 @@
 const kindeVariables = {
-  baseFontFamily: '"Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  baseFontFamily: '"Catamaran", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
   baseTextColor: "#002E5D",
   buttonPrimaryBackgroundColor: "#0085CA",
   buttonPrimaryColor: "#ffffff",
@@ -44,6 +44,12 @@ export const getStyles = (): string => `
     --ico-428: ${brandPalette.gray428};
     --ico-black: ${brandPalette.black};
     --ico-287: ${brandPalette.blue287};
+  }
+
+  html,
+  body,
+  body * {
+    font-family: ${kindeVariables.baseFontFamily} !important;
   }
 
   body {
@@ -92,6 +98,25 @@ export const getStyles = (): string => `
   .ico-shell {
     min-height: 100vh;
     position: relative;
+  }
+
+  .ico-shell::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    display: block !important;
+    background-image: url("https://portalafiliados.icontec.org/wp-content/uploads/2026/10/PATRON-ICONTEC-CMYK_2023_WH.png") !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    background-size: 520px auto !important;
+    opacity: 0.18 !important;
+  }
+
+  .ico-main {
+    position: relative;
+    z-index: 1;
   }
 
   .ico-header {

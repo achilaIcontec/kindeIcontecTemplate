@@ -30,6 +30,12 @@ export const Root = ({
         <meta content="nopagereadaloud" name="google" />
         <title>{context.widget.content.page_title}</title>
         <link href={getSVGFaviconUrl()} rel="icon" type="image/svg+xml" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         {getKindeRequiredCSS()}
         {getKindeRequiredJS()}
         <style>{getStyles()}</style>
