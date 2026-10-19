@@ -28,7 +28,7 @@ export const Root = ({
         <meta content={getKindeCSRF()} name="csrf-token" />
         <meta content="light" name="color-scheme" />
         <meta content="nopagereadaloud" name="google" />
-        <title>{context.widget.content.page_title}</title>
+        <title>AuthIcontec</title>
         <link href={getSVGFaviconUrl()} rel="icon" type="image/svg+xml" />
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
