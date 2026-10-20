@@ -120,7 +120,7 @@ export const getStyles = (): string => `
     background-image: ${icontecPatternUrl}, ${icontecPatternUrl} !important;
     background-repeat: repeat, repeat !important;
     background-position: 0 0, 80px 80px !important;
-    background-size: 160px 160px, 160px 160px !important;
+    background-size: 60px 60px, 60px 60px !important;
     opacity: 0.14 !important;
   }
 
