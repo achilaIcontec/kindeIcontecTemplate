@@ -111,7 +111,7 @@ export const getStyles = (): string => `
   }
 
   .ico-shell::before {
-    content: "" !important;
+    // content: "" !important;
     position: fixed !important;
     inset: 0 !important;
     z-index: 0 !important;
